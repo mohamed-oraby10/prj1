@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prj1/constants.dart';
+import 'package:prj1/views/forget_password_view.dart';
 import 'package:prj1/views/register_view.dart';
 import 'package:prj1/widgets/email_field.dart';
 import 'package:prj1/widgets/main_button.dart';
@@ -75,13 +76,23 @@ class LoginViewBody extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                'Forget Password',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: kTitleText,
-                  fontWeight: FontWeight.w500,
-                  decoration: TextDecoration.underline,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ForgetPasswordView(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Forget Password',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: kTitleText,
+                    fontWeight: FontWeight.w500,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
             ],
