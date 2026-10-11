@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prj1/constants.dart';
+import 'package:prj1/views/login_view.dart';
+import 'package:prj1/views/register_view.dart';
 import 'package:prj1/widgets/main_button.dart';
 
 class WelcomeView extends StatelessWidget {
@@ -88,26 +90,45 @@ class WelcomeView extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Color(0xff909BA6), width: 1),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 46),
-                    child: Text(
-                      'SIGN UP',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff5E6E7E),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterView()),
+                      );
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Color(0xff909BA6), width: 1),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16,
+                        horizontal: 46,
+                      ),
+                      child: Text(
+                        'SIGN UP',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff5E6E7E),
+                        ),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: MainButton(text: 'SIGN IN', onTap: () {}),
+                  child: MainButton(
+                    text: 'SIGN IN',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginView()),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
