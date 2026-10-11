@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prj1/constants.dart';
+import 'package:prj1/views/welcome_view.dart';
 import 'package:prj1/widgets/main_button.dart';
 
 class EnrgyView extends StatefulWidget {
@@ -115,7 +116,15 @@ class _EnrgyViewState extends State<EnrgyView> {
                     },
                   ),
                   SizedBox(height: 24),
-                  MainButton(text: 'WELCOME', onTap: () {}),
+                  MainButton(
+                    text: 'WELCOME',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WelcomeView()),
+                      );
+                    },
+                  ),
                   SizedBox(height: 32),
                   SvgPicture.asset(
                     'assets/images/Finish line-pana 1.svg',
