@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:prj1/constants.dart';
 import 'package:prj1/data/lists/onboarding_items.dart';
 import 'package:prj1/data/models/onboarding_model.dart';
+import 'package:prj1/views/sleep_hours_view.dart';
 import 'package:prj1/widgets/app_page_indicator.dart';
 import 'package:prj1/widgets/main_button.dart';
 import 'package:prj1/widgets/onboarding_animated_item.dart';
@@ -154,7 +155,17 @@ class OnboardingCard extends StatelessWidget {
                         SizedBox(height: 80),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 46),
-                          child: MainButton(text: 'START', onTap: () {}),
+                          child: MainButton(
+                            text: 'START',
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SleepHoursView(),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ],
                     ),
